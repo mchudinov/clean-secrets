@@ -32,10 +32,10 @@ wget https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar
 cp bfg-1.14.0.jar bfg.jar
 ```
 
-2. Clone-mirror the repository
+2. Clone-mirror the repository. I use `x-oauth-basic` authentication inside the container.
 
 ```sh
-git clone --mirror https://github.com/mchudinov/clean-secrets.git 
+git clone --mirror https://ghp_yourkey:x-oauth-basic@github.com/mchudinov/clean-secrets.git 
 ```
 
 3. Create the files that contains secrets 
@@ -62,7 +62,10 @@ cat clean-secrets.git.bfg-report/2023-11-09/13-05-50/changed-files.txt
 ...
 ```
 
-6. Commit the changes
+**❗ BFG doesn't modify the latest commit on your master (or 'HEAD') branch, it cleans all the commits before it.**
+
+
+1. Commit the changes
 
 ```sh
 cd clean-secrets.git
