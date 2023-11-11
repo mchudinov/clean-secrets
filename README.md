@@ -25,7 +25,6 @@ apk update && apk upgrade && apk add git && apk add wget && apk add openjdk11
 
 1. Download the BFG tool
 
-
 ```sh
 cd /tmp
 wget https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar
@@ -64,8 +63,7 @@ cat clean-secrets.git.bfg-report/2023-11-09/13-05-50/changed-files.txt
 
 **❗ BFG doesn't modify the latest commit on your master (or 'HEAD') branch, it cleans all the commits before it.**
 
-
-1. Commit the changes
+6. Commit the changes
 
 ```sh
 cd clean-secrets.git
@@ -101,7 +99,6 @@ Details of protected dirty content have been recorded here :
 
 If you *really* want this content gone, make a manual commit that removes it,
 and then run the BFG on a fresh copy of your repo.
-
 
 Cleaning
 --------
